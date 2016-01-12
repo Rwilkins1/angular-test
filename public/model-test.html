@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My first Angular App!</title>
+	<style type="text/css">
+		input.ng-touched.ng-invalid {
+			background-color: red;
+		}
+		input.ng-touched.ng-valid {
+			background-color: green;
+		}
+		img {
+			height: 300px;
+			width: 300px;
+			margin-bottom: 2%;
+			margin-left: 60%;
+		}
+		.card {
+			border: 5px double black;
+			margin-right: 35%;
+			background-color: papayawhip;
+		}
+	</style>
+</head>
+<body ng-app="modelTest">
+	<div class="card">
+		<h1>{{ name }}</h1>
+		<h2>{{ email }}</h2>
+		<h3>{{ birthday }}</h3>
+		<h4>{{ github }}</h4>
+		<img ng-src="/img/{{picture}}.png">
+	</div>
+	<form novalidate>
+		<p>
+			<label for "name">Name</label>
+			<input type="text" id="name" ng-model="name" minlength="2" required>
+		</p>
+		<p>
+			<label for "email">Email Address</label>
+			<input type="email" id="email" ng-model="email" required>
+		</p>
+		<p>
+			<label for "birthday">Date of Birth</label>
+			<input type="date" id="birthday" ng-model="birthday" required>
+		</p>
+		<p>
+			<label for "github">Github URL</label>
+			<input type="url" id="github" ng-model="github" required>
+		</p>
+		<p>
+			<label for "picture">Select a picture</label>
+			<select ng-model="picture">
+				<option selected disabled>Select a picture</option>
+				<option>Anarcho-Capitalism</option>
+				<option>Honda</option>
+				<option>Nature</option>
+			</select>
+		</p>
+	</form>
+		<script type="text/javascript" src="/js/angular.min.js"></script>
+		<script type="text/javascript" src="/js/modelTest.js"></script>
+</body>
+</html>
